@@ -266,6 +266,7 @@ public static class CatalogApi
             CatalogTypeId = product.CatalogTypeId,
             Description = product.Description,
             Name = product.Name,
+            Gender = product.Gender,
             PictureFileName = product.PictureFileName,
             Price = product.Price,
             AvailableStock = product.AvailableStock,
