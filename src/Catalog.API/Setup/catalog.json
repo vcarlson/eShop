@@ -907,5 +907,33 @@
     "Description": "The Trek Xtreme hiking shoes by Raptor Elite are built to endure any trail. With their durable leather upper and rugged rubber sole, they offer excellent traction and protection. These shoes come in a timeless brown color that adds a touch of style to your outdoor adventures.",
     "Price": 135.99,
     "Gender": "Female"
+  },
+  {
+    "Id": 102,
+    "Type": "Footwear",
+    "Brand": "Raptor Elite",
+    "Name": "TrailBlaze Running Shoes",
+    "Description": "Designed for the avid runner, the TrailBlaze running shoes by Raptor Elite combine lightweight mesh with a flexible rubber sole for enhanced speed and comfort. The vibrant blue and silver design keeps you stylish on the go.",
+    "Price": 129.99,
+    "Gender": "Female"
+  },
+  {
+    "Id": 103,
+    "Type": "Footwear",
+    "Brand": "Raptor Elite",
+    "Name": "Summit Pro Hiking Boots",
+    "Description": "Take on the toughest terrains with the Summit Pro hiking boots by Raptor Elite. Featuring a waterproof membrane and reinforced toe cap, these boots provide unmatched durability and comfort for all-day treks. Available in sleek black and grey.",
+    "Price": 149.99,
+    "Gender": "Female"
+  },
+  {
+    "Id": 104,
+    "Type": "Footwear",
+    "Brand": "Raptor Elite",
+    "Name": "Adventure Sandals",
+    "Description": "The Adventure Sandals by Raptor Elite are perfect for summer hikes and water adventures. With adjustable straps and a cushioned footbed, they ensure a secure and comfortable fit. Comes in a vibrant coral and grey design.",
+    "Price": 89.99,
+    "Gender": "Female"
   }
+
 ]
