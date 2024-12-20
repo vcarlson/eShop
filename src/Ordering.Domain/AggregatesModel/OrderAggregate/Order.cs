@@ -183,4 +183,16 @@ public class Order
     }
 
     public decimal GetTotal() => _orderItems.Sum(o => o.Units * o.UnitPrice);
+
+    public decimal GetSalesTax()
+    {
+        const decimal salesTaxRate = 0.065m; // 6.5%
+        return GetTotal() * salesTaxRate;
+    }
+
+    public decimal GetGrandTotal()
+    {
+        return GetTotal() + GetSalesTax();
+    }
+
 }

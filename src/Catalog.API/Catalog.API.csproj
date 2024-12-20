@@ -40,6 +40,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Pics\102.webp" />
+    <Content Remove="Pics\103.webp" />
+    <Content Remove="Pics\104.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="Catalog.FunctionalTests" />
   </ItemGroup>
 

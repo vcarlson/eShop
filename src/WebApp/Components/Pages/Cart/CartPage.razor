@@ -43,9 +43,9 @@
                             <input type="hidden" name="_handler" value="update-cart" />
                             <AntiforgeryToken />
                             <input aria-label="product quantity" type="number" name="UpdateQuantityValue" value="@quantity" min="0" />
-                            <button type="submit" 
+                            <button type="submit"
                                     class="button button-secondary"
-                                    name="UpdateQuantityId" 
+                                    name="UpdateQuantityId"
                                     value="@item.ProductId">
                                 Update
                             </button>
@@ -57,18 +57,25 @@
                 </div>
             }
         </div>
-       
 
         <div class="cart-summary">
             <div class="cart-summary-container">
                 <div class="cart-summary-header">
                     <img role="presentation" src="icons/cart.svg" />
                     Your shopping bag
-                    <span class="filter-badge">@TotalQuantity</span>
+                    <span class="filter-badge">@GrandTotal</span>
                 </div>
                 <div class="cart-summary-total">
-                    <div>Total</div>
+                    <div>Subtotal</div>
                     <div>$@TotalPrice?.ToString("0.00")</div>
+                </div>
+                <div class="cart-summary-total">
+                    <div>Sales Tax (6.5%)</div>
+                    <div>$@SalesTax?.ToString("0.00")</div>
+                </div>
+                <div class="cart-summary-total">
+                    <div>Grand Total</div>
+                    <div>$@GrandTotal?.ToString("0.00")</div>
                 </div>
                 <a href="checkout" class="button button-primary">Check out</a>
                 <a href="" class="cart-summary-link">
@@ -97,10 +104,10 @@
     }
 
     private decimal? TotalPrice => basketItems?.Sum(i => i.Quantity * i.UnitPrice);
-    private decimal? TotalQuantity => basketItems?.Sum(i => i.Quantity);
+    private decimal SalesTaxRate => 0.065m;
+    private decimal? SalesTax => TotalPrice * SalesTaxRate;
+    private decimal? GrandTotal => TotalPrice + SalesTax;
 
-    // While an update post is in process, we want to show the pending quantity, not the one
-    // that is committed to the cart (otherwise the UI briefly shows the old data)
     private int CurrentOrPendingQuantity(int productId, int cartQuantity)
         => UpdateQuantityId.GetValueOrDefault(-1) == productId
         ? UpdateQuantityValue!.Value
